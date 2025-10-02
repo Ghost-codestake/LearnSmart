@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Smart | Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/learnsmart-logo.png" alt="" />
+      </div>
+
+      <!-- Hamburger -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Navigation -->
+      <nav id="navbar">
+        <ul>
+          <li><a href="https://www.lss.ng">Home</a></li>
+          <li><a href="index.html">Tech School</a></li>
+          <!-- Dropdown -->
+          <li class="dropdown">
+            <a href="#">Courses ▾</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="course-contents/cybersecurity.html">Cybersecurity</a>
+              </li>
+              <li>
+                <a href="course-contents/ui-ux-design.html">UI/UX Design</a>
+              </li>
+              <li>
+                <a href="course-contents/data-analysis.html">Data Analytics</a>
+              </li>
+              <li>
+                <a href="course-contents/digital-marketing.html"
+                  >Digital Marketing</a
+                >
+              </li>
+              <li>
+                <a href="course-contents/software-development.html"
+                  >Software Development</a
+                >
+              </li>
+              <li>
+                <a href="course-contents/frontend-development.html"
+                  >Frontend Web Development</a
+                >
+              </li>
+              <li>
+                <a href="course-contents/product-management.html"
+                  >Product Management</a
+                >
+              </li>
+              <li>
+                <a href="course-contents/backend-development.html"
+                  >Backend Development</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <div class="carousel">
+        <!-- Slides -->
+        <div
+          class="slide active"
+          style="background-image: url('images/Lernsmart.jpg')"
+        ></div>
+        <div
+          class="slide"
+          style="
+            background-image: url('images/abstract-dark-blue-futuristic-digital-grid-background_53876-104051.jpg');
+          "
+        ></div>
+        <div
+          class="slide"
+          style="background-image: url('images/Learnsmart-hero2.jpg')"
+        ></div>
+        <div
+          class="slide"
+          style="
+            background-image: url('images/abstract-dark-blue-futuristic-digital-grid-background_53876-104051.jpg');
+          "
+        ></div>
+
+        <!-- Overlay content -->
+        <div class="hero-content">
+          <h2>Empowering Your Future in Tech</h2>
+          <p>Learn, Grow, and Succeed with Our Professional IT Training</p>
+          <a href="courses.html" class="btn">Explore Courses</a>
+        </div>
+
+        <!-- Controls -->
+        <div class="carousel-controls">
+          <span class="prev">&#10094;</span>
+          <span class="next">&#10095;</span>
+        </div>
+
+        <!-- Indicators -->
+        <div class="carousel-dots"></div>
+      </div>
+    </main>
+
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="stat-item">
+        <h3><span class="counter" data-target="800">0</span>+</h3>
+        <p>Graduated Students</p>
+      </div>
+      <div class="stat-item">
+        <h3><span class="counter" data-target="250">0</span>+</h3>
+        <p>Present Students</p>
+      </div>
+      <div class="stat-item">
+        <h3><span class="counter" data-target="20">0</span>+</h3>
+        <p>Courses Offered</p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>
+        We provide world-class IT training programs that prepare you for the
+        future of technology. Learn practical skills in web development,
+        networking, cybersecurity, and more.
+      </p>
+      <a href="about.html" class="btn">Learn More</a>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+      <div class="container">
+        <h2 class="section-title">Our Courses</h2>
+        <div class="courses-grid">
+          <div class="course-card" id="cybersecurity">
+            <img src="images/courses/Cybersecurtiy.jpg" alt="Cybersecurity" />
+            <h3>Cybersecurity</h3>
+
+            <p>
+              Learn how to protect systems, networks, and data from cyber
+              threats. This course covers security principles, risk management,
+              and ethical hacking fundamentals.
+            </p>
+            <a class="course-btn" href="./course-contents/cybersecurity.html"
+              >Learn More
+            </a>
+          </div>
+
+          <div class="course-card" id="uiux">
+            <img src="images/courses/UI-UX designers.jpg" alt="UI/UX Design" />
+            <h3>UI/UX Design</h3>
+
+            <p>
+              Master the art of creating user-friendly digital experiences. From
+              wireframing to prototyping, this course covers both design
+              thinking and usability testing.
+            </p>
+            <a class="course-btn" href="./course-contents/ui-ux-design.html"
+              >Learn More
+            </a>
+          </div>
+
+          <div class="course-card" id="data">
+            <img src="images/courses/Data analysers.jpg" alt="Data Analytics" />
+            <h3>Data Analytics</h3>
+
+            <p>
+              Develop skills to interpret and analyze data. Learn tools like
+              Excel, SQL, and Python to make data-driven decisions and generate
+              business insights.
+            </p>
+            <a class="course-btn" href="./course-contents/data-analysis.html"
+              >Learn More
+            </a>
+          </div>
+
+          <div class="course-card" id="marketing">
+            <img
+              src="images/courses/digital marketers.jpg"
+              alt="Digital Marketing"
+            />
+            <h3>Digital Marketing</h3>
+
+            <p>
+              Learn SEO, social media strategy, email campaigns, and paid ads.
+              This course equips you with the tools to grow brands publibity
+              online effectively.
+            </p>
+            <a
+              class="course-btn"
+              href="./course-contents/digital-marketing.html"
+              >Learn More
+            </a>
+          </div>
+
+          <div class="course-card" id="software">
+            <img
+              src="images/courses/software developers.jpg"
+              alt="Software Development"
+            />
+            <h3>Software Development</h3>
+
+            <p>
+              Gain strong programming fundamentals and learn to build robust
+              applications. Covers coding practices, debugging, and software
+              lifecycle.
+            </p>
+            <a
+              class="course-btn"
+              href="./course-contents/software-development.html"
+              >Learn More
+            </a>
+          </div>
+
+          <div class="course-card" id="frontend">
+            <img
+              src="images/courses/frontend developers.jpg"
+              alt="Frontend Web Development"
+            />
+            <h3>Frontend Development</h3>
+
+            <p>
+              Learn HTML, CSS, and JavaScript to build responsive, interactive
+              websites. This course includes modern frameworks like React and
+              Vue.
+            </p>
+            <a
+              class="course-btn"
+              href="./course-contents/frontend-development.html"
+              >Learn More
+            </a>
+          </div>
+
+          <div class="course-card" id="product">
+            <img
+              src="images/courses/Project management.jpg"
+              alt="Product Management"
+            />
+            <h3>Product Management</h3>
+
+            <p>
+              Understand how to manage products from concept to launch. Covers
+              roadmapping, agile methodology, and stakeholder communication.
+            </p>
+            <a
+              class="course-btn"
+              href="./course-contents/product-management.html"
+              >Learn More
+            </a>
+          </div>
+
+          <div class="course-card" id="Backend">
+            <img
+              src="images/courses/Graphics & Visual Design + AI Tools.jpg"
+              alt="Backend Development"
+            />
+            <h3>Backend Development</h3>
+
+            <p>
+              Learn how to power the web by handling behind-the-scenes
+              functionality, connecting the web to databases and managing user
+              connections
+            </p>
+            <a
+              class="course-btn"
+              href="./course-contents/backend-development.html"
+              >Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="courses.html" class="btn">View All Courses</a>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/2348188888823"
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Chat with us on WhatsApp"
+    >
+      <img src="images/whatsapp-icon.png" alt="WhatsApp Chat" />
+    </a>
+
+    <!--why choose us?-->
+
+    <section class="why-choose-us" id="why-us">
+      <div class="container">
+        <div class="why-grid">
+          <!-- Left Content -->
+          <div class="why-content">
+            <h2>Why Choose Us?</h2>
+            <p>
+              At our IT training center, we go beyond traditional learning. We
+              blend hands-on projects, real-world tools, and expert mentorship
+              to help you thrive in your career.
+            </p>
+
+            <div class="why-icons">
+              <div class="icon-box">
+                <img src="images/chalkboard.png" alt="Instructors" />
+                <h4>Expert Instructors</h4>
+                <p>
+                  Learn from certified professionals with years of industry
+                  experience.
+                </p>
+              </div>
+
+              <div class="icon-box">
+                <img src="images/programming.png" alt="" />
+                <h4>Practical Training</h4>
+                <p>
+                  Get hands-on exposure to tools, frameworks, and technologies.
+                </p>
+              </div>
+
+              <div class="icon-box">
+                <img src="images/group.png" alt="" />
+                <h4>Community Support</h4>
+                <p>
+                  Join a growing network of learners and tech professionals.
+                </p>
+              </div>
+
+              <div class="icon-box">
+                <img src="images/briefcase.png" alt="" />
+                <h4>Career Focused</h4>
+                <p>
+                  Gain skills employers need and prepare for real job
+                  opportunities.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Images -->
+          <div class="why-images">
+            <img
+              src="images/students learning.jpg"
+              alt="Students learning"
+              class="img1"
+            />
+            <img
+              src="images/team collab.jpg"
+              alt="Team collaboration"
+              class="img2"
+            />
+          </div>
+        </div>
+      </div>
+      <span class="floating-icon icon1"
+        ><img src="images/code.png" alt=""
+      /></span>
+      <span class="floating-icon icon2"
+        ><img src="images/light-bulb.png" alt=""
+      /></span>
+      <span class="floating-icon icon3"
+        ><img src="images/networking.png" alt=""
+      /></span>
+      <span class="floating-icon icon4"
+        ><img src="images/server.png" alt=""
+      /></span>
+    </section>
+
+    <!--Testimonial section-->
+    <section class="testimonials-container">
+      <h2 class="section-title">What Our Students Say</h2>
+
+      <div class="carousel-wrapper">
+
+
+        <div class="carousel-container" id="carouselContainer">
+          <div class="testimonial-slide active">
+            <img
+              src="https://images.unsplash.com/photo-1494790108755-2616b612b932?w=150&h=150&fit=crop&crop=face"
+              alt="Sarah Johnson"
+              class="user-image"
+            />
+            <h3 class="user-name">Sarah Johnson</h3>
+            <p class="user-role">Marketing Director</p>
+            <p class="review-text">
+              The UI/UX course completely changed my career path. The
+              instructors guided me from the basics of wireframing to advanced
+              prototyping. I landed my first role as a junior designer just
+              weeks after graduating.
+            </p>
+            <div class="rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+              alt="Michael Chen"
+              class="user-image"
+            />
+            <h3 class="user-name">Michael Chen</h3>
+            <p class="user-role">Tech Startup CEO</p>
+            <p class="review-text">
+              The cybersecurity program was intense but rewarding. From
+              penetration testing to incident response, I gained real-world
+              skills I now use daily in my job.
+            </p>
+            <div class="rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+              alt="Emily Rodriguez"
+              class="user-image"
+            />
+            <h3 class="user-name">Aisha Ahmed</h3>
+            <p class="user-role">E-commerce Owner</p>
+            <p class="review-text">
+              The data analytics training gave me a solid foundation in Python,
+              SQL, and visualization tools. The projects prepared me for real
+              workplace challenges.
+            </p>
+            <div class="rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <img
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+              alt="David Thompson"
+              class="user-image"
+            />
+            <h3 class="user-name">Heritage Akinbowale</h3>
+            <p class="user-role">Software Devolper LS</p>
+            <p class="review-text">
+              As a software development student, I learned to build complete
+              projects from scratch. The capstone project gave me confidence to
+              work in a startup environment.
+            </p>
+            <div class="rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-nav">
+        <div class="nav-dot active" onclick="goToSlide(0)"></div>
+        <div class="nav-dot" onclick="goToSlide(1)"></div>
+        <div class="nav-dot" onclick="goToSlide(2)"></div>
+        <div class="nav-dot" onclick="goToSlide(3)"></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-container">
+      <div class="faq-header">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+        <p class="faq-subtitle">
+          Get instant answers to common questions about our IT services,
+          support, and solutions
+        </p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What kind of courses do you offer?</span>
+            <svg
+              class="faq-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+              ></path>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              We offer a wide range of technology-focused courses including
+              Cybersecurity, UI/UX Design, Data Analytics, Digital Marketing,
+              Software Development, Frontend Web Development, Product
+              Management, and Graphics & Visual Design with AI Tools.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do I need prior experience to enroll?</span>
+            <svg
+              class="faq-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+              ></path>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Not at all! Our courses are designed for both beginners and
+              professionals. We start from the basics and gradually move into
+              advanced concepts with hands-on projects.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How long does each course take to complete?</span>
+            <svg
+              class="faq-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+              ></path>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Depending on the course, the duration ranges from 8 to 16 weeks.
+              Some advanced programs may run longer to include real-world
+              projects and mentorship.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Are the classes online or in-person?</span>
+            <svg
+              class="faq-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+              ></path>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              We provide both online and physical classes. You can choose the
+              mode that suits your schedule and location best. Online classes
+              are conducted live, with recorded sessions available for review.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Will I get a certificate after completing a course?</span>
+            <svg
+              class="faq-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+              ></path>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Yes. All students who complete their courses and projects
+              successfully will receive a recognized certificate of completion,
+              which can be added to your portfolio and LinkedIn profile.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Are there practical projects during the training?</span>
+            <svg
+              class="faq-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+              ></path>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Absolutely! Every course includes real-world projects and case
+              studies to ensure you apply what you learn. By the end, you’ll
+              have portfolio-ready work to showcase to potential employers.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-cta">
+        <h3 class="cta-title">Still Have Questions?</h3>
+        <p class="cta-text">
+          Our expert team is ready to provide personalized answers and solutions
+          for your specific IT needs.
+        </p>
+        <a href="https://wa.me/2348188888823" class="cta-button">Get In Touch</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>Learn Smart</h3>
+          <p>
+            Empowering students with hands-on IT skills to thrive in today’s
+            digital world.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-newsletter">
+          <h4>Join Our Newsletter</h4>
+          <p>Subscribe to get updates on new courses and career tips.</p>
+          <form id="newsletterForm">
+            <input
+              type="email"
+              id="newsletterEmail"
+              placeholder="Enter your email"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+          <p id="newsletterMsg"></p>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>📍 20A, Idiroko Road, Sango Ota</p>
+          <p>📞 +234 818 888 8823</p>
+          <p>📧 info@lss.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Learn Smart. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,418 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Learn Smart</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+  /* Hero */
+.about-hero {
+  background: url("images/about-hero\ \(2\).jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 20% 20px;
+}
+.about-hero h1 {
+  font-size: 3rem;
+}
+.about-hero p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+/* Story */
+.our-story .container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin: 60px auto;
+}
+.story-text { flex: 1; }
+.story-image img { width: 100%; border-radius: 20px; }
+
+/* Fancy Border */
+.fancy-border {
+  border: 3px dashed var(--primary);
+  padding: 15px;
+  border-radius: 20px;
+  transition: transform 0.3s;
+}
+.fancy-border:hover {
+  transform: scale(1.03);
+}
+
+/* Mission & Vision */
+.mission-vision .container {
+  display: flex;
+  gap: 20px;
+}
+.mv-card {
+  flex: 1;
+  text-align: center;
+}
+
+
+/* Team */
+.our-team .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.team-card img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+/* Achievements */
+.achievements .container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 50px auto;
+}
+.achievement-item h3 {
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 60px 20px;
+  background: #6610f2;
+  color: #fff;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+}
+.cta .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #fff;
+  color: var(--primary);
+  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+/* Footer */
+
+
+/* --- MEDIA QUERIES --- */
+
+/* Mobile */
+@media (max-width: 480px) {
+  .our-story .container,
+  .mission-vision .container,
+  .our-team .container,
+  .achievements .container {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-hero h1 { font-size: 2rem; }
+}
+
+/* Small tablets */
+@media (max-width: 600px) {
+  .our-team .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .mission-vision .container {
+    flex-direction: column;
+  }
+  .our-team .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .our-team .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+  .our-team .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+</style>
+<body>
+    <header>
+      <div class="logo">
+        <img src="images/learnsmart-logo.png" alt="" />
+      </div>
+
+      <!-- Hamburger -->
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Navigation -->
+      <nav id="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <!-- Dropdown -->
+          <li class="dropdown">
+            <a href="#">Courses ▾</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="course-contents/cybersecurity.html">Cybersecurity</a>
+              </li>
+              <li>
+                <a href="course-contents/ui-ux-design.html">UI/UX Design</a>
+              </li>
+              <li>
+                <a href="course-contents/data-analysis.html">Data Analytics</a>
+              </li>
+              <li><a href="course-contents/digital-marketing.html">Digital Marketing</a></li>
+              <li><a href="course-contents/software-development.html">Software Development</a></li>
+              <li>
+                <a href="course-contents/frontend-development.html">Frontend Web Development</a>
+              </li>
+              <li><a href="course-contents/product-management.html">Product Management</a></li>
+              <li>
+                <a href="course-contents/backend-development.html"
+                  >Backend Development</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+
+
+ <section class="about-hero">
+    <div class="hero-content">
+      <h1>About Our Training Center</h1>
+      <p>Shaping the next generation of tech professionals through practical, hands-on learning.</p>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="our-story">
+    <div class="container">
+      <div class="story-text">
+        <h2>Our Story</h2>
+        <p>Founded with the vision of bridging the digital skills gap, our training center has empowered hundreds of students with practical IT knowledge. We believe in hands-on learning, real-world projects, and guidance from industry experts.</p>
+      </div>
+      <div class="story-image fancy-border">
+        <img src="images/about-story.jpg" alt="Our Story">
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="mission-vision">
+    <div class="container">
+      <div class="mv-card fancy-border">
+        <h3>Our Mission</h3>
+        <p>To empower students with the skills and confidence to excel in the digital economy.</p>
+      </div>
+      <div class="mv-card fancy-border">
+        <h3>Our Vision</h3>
+        <p>To become the leading hub for IT training and innovation in the region.</p>
+      </div>
+    </div>
+  </section>
+
+    <!--why choose us?-->
+
+    <section class="why-choose-us" id="why-us">
+      <div class="container">
+        <div class="why-grid">
+          <!-- Left Content -->
+          <div class="why-content">
+            <h2>Why Choose Us?</h2>
+            <p>
+              At our IT training center, we go beyond traditional learning. We
+              blend hands-on projects, real-world tools, and expert mentorship
+              to help you thrive in your career.
+            </p>
+
+            <div class="why-icons">
+              <div class="icon-box">
+                <img src="images/chalkboard.png" alt="Instructors" />
+                <h4>Expert Instructors</h4>
+                <p>
+                  Learn from certified professionals with years of industry
+                  experience.
+                </p>
+              </div>
+
+              <div class="icon-box">
+                <img src="images/programming.png" alt="" />
+                <h4>Practical Training</h4>
+                <p>
+                  Get hands-on exposure to tools, frameworks, and technologies.
+                </p>
+              </div>
+
+              <div class="icon-box">
+                <img src="images/group.png" alt="" />
+                <h4>Community Support</h4>
+                <p>
+                  Join a growing network of learners and tech professionals.
+                </p>
+              </div>
+
+              <div class="icon-box">
+                <img src="images/briefcase.png" alt="" />
+                <h4>Career Focused</h4>
+                <p>
+                  Gain skills employers need and prepare for real job
+                  opportunities.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Images -->
+          <div class="why-images">
+            <img
+              src="images/students learning.jpg"
+              alt="Students learning"
+              class="img1"
+            />
+            <img
+              src="images/team collab.jpg"
+              alt="Team collaboration"
+              class="img2"
+            />
+          </div>
+        </div>
+      </div>
+      <span class="floating-icon icon1"
+        ><img src="images/code.png" alt=""
+      /></span>
+      <span class="floating-icon icon2"
+        ><img src="images/light-bulb.png" alt=""
+      /></span>
+      <span class="floating-icon icon3"
+        ><img src="images/networking.png" alt=""
+      /></span>
+      <span class="floating-icon icon4"
+        ><img src="images/server.png" alt=""
+      /></span>
+    </section>
+
+  <!-- Meet Our Team -->
+  <section class="our-team">
+    <h2>Meet Our Instructors</h2>
+    <div class="container">
+      <div class="team-card fancy-border">
+        <img src="images/instructor1.jpg" alt="Instructor 1">
+        <h4>John Doe</h4>
+        <p>Cybersecurity Specialist with 10+ years of experience.</p>
+      </div>
+      <div class="team-card fancy-border">
+        <img src="images/instructor2.jpg" alt="Instructor 2">
+        <h4>Jane Smith</h4>
+        <p>UI/UX Designer who has worked with top startups worldwide.</p>
+      </div>
+      <div class="team-card fancy-border">
+        <img src="images/instructor3.jpg" alt="Instructor 3">
+        <h4>Michael Lee</h4>
+        <p>Data Analyst expert in Python, SQL, and Power BI.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section class="achievements">
+    <div class="container">
+      <div class="achievement-item">
+        <h3>800+</h3>
+        <p>Graduates</p>
+      </div>
+      <div class="achievement-item">
+        <h3>200+</h3>
+        <p>Ongoing Students</p>
+      </div>
+      <div class="achievement-item">
+        <h3>20+</h3>
+        <p>Courses Offered</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready to Start Your Tech Journey?</h2>
+    <a href="courses.html" class="btn">Explore Courses</a>
+  </section>
+
+  <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>Learn Smart</h3>
+          <p>
+            Empowering students with hands-on IT skills to thrive in today’s
+            digital world.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-newsletter">
+          <h4>Join Our Newsletter</h4>
+          <p>Subscribe to get updates on new courses and career tips.</p>
+          <form id="newsletterForm">
+            <input
+              type="email"
+              id="newsletterEmail"
+              placeholder="Enter your email"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+          <p id="newsletterMsg"></p>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>📍 20A, Idiroko Road, Sango Ota</p>
+          <p>📞 +234 818 888 8823</p>
+          <p>📧 info@lss.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Learn Smart. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
