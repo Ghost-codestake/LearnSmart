@@ -3,314 +3,276 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Learn Smart | Home</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>TechHive</title>
+    <link href="./style.css" rel="stylesheet" />
   </head>
   <body>
     <header>
-      <div class="logo">
-        <img src="images/learnsmart-logo.png" alt="" />
+      <a href="https://lss.ng/" target="_blank" class="logo">
+        <img src="/images/Tech Hive.png" />
+      </a>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
-      <!-- Hamburger -->
-      <div class="menu-toggle" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <!-- Navigation -->
-      <nav id="navbar">
-        <ul>
-          <li><a href="https://www.lss.ng">Home</a></li>
-          <li><a href="index.html">Tech School</a></li>
-          <!-- Dropdown -->
-          <li class="dropdown">
-            <a href="#">Courses ▾</a>
+      <nav id="nav">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="https://lss.ng/">Home</a></li>
+          <li class="dropdown" id="dropdown">
+            <a href="#courses">Courses ▾</a>
             <ul class="dropdown-menu">
               <li>
-                <a href="course-contents/cybersecurity.html">Cybersecurity</a>
-              </li>
-              <li>
-                <a href="course-contents/ui-ux-design.html">UI/UX Design</a>
-              </li>
-              <li>
-                <a href="course-contents/data-analysis.html">Data Analytics</a>
-              </li>
-              <li>
-                <a href="course-contents/digital-marketing.html"
-                  >Digital Marketing</a
+                <a href="./course-contents/frontend-development.html"
+                  >Web Development</a
                 >
               </li>
               <li>
-                <a href="course-contents/software-development.html"
-                  >Software Development</a
+                <a href="./course-contents/ui-ux-design.html"
+                  >Graphic/UI/UX Design</a
                 >
               </li>
               <li>
-                <a href="course-contents/frontend-development.html"
-                  >Frontend Web Development</a
+                <a href="./course-contents/social-media-management.html"
+                  >Social Media Management</a
                 >
               </li>
               <li>
-                <a href="course-contents/product-management.html"
-                  >Product Management</a
+                <a href="./course-contents/video-editing.html"
+                  >Video Editing & Content Creation</a
                 >
               </li>
               <li>
-                <a href="course-contents/backend-development.html"
-                  >Backend Development</a
+                <a href="./course-contents/virtual-assistant.html"
+                  >Virtual Assistant</a
                 >
               </li>
             </ul>
           </li>
-          <li><a href="about.html">About</a></li>
-
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#registration">Registration</a></li>
+          <li><a href="#faqs">FAQs</a></li>
         </ul>
+
+        <a href="./contact.html" class="cta-btn">Contact us</a>
       </nav>
+
+      <a href="./contact.html" class="cta-btn">Contact us</a>
     </header>
 
-    <main class="hero">
-      <div class="carousel">
-        <!-- Slides -->
-        <div
-          class="slide active"
-          style="background-image: url('images/Lernsmart.jpg')"
-        ></div>
-        <div
-          class="slide"
-          style="
-            background-image: url('images/abstract-dark-blue-futuristic-digital-grid-background_53876-104051.jpg');
-          "
-        ></div>
-        <div
-          class="slide"
-          style="background-image: url('images/Learnsmart-hero2.jpg')"
-        ></div>
-        <div
-          class="slide"
-          style="
-            background-image: url('images/abstract-dark-blue-futuristic-digital-grid-background_53876-104051.jpg');
-          "
-        ></div>
-
-        <!-- Overlay content -->
-        <div class="hero-content">
-          <h2>Empowering Your Future in Tech</h2>
-          <p>Learn, Grow, and Succeed with Our Professional IT Training</p>
-          <a href="courses.html" class="btn">Explore Courses</a>
-        </div>
-
-        <!-- Controls -->
-        <div class="carousel-controls">
-          <span class="prev">&#10094;</span>
-          <span class="next">&#10095;</span>
-        </div>
-
-        <!-- Indicators -->
-        <div class="carousel-dots"></div>
+    <!--The Hero Section-->
+    <section class="hero">
+      <div class="hero-content scroll-animate">
+        <h1>EMPOWERING YOUNG FUTURES IN TECH</h1>
+        <p>Learn, Grow, and Succeed with our Professional IT Training</p>
+        <a href="#">Explore Courses</a>
       </div>
-    </main>
+    </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-      <div class="stat-item">
-        <h3><span class="counter" data-target="800">0</span>+</h3>
+    <section class="stats scroll-animate">
+      <div class="stat">
+        <h2 data-target="100">0</h2>
         <p>Graduated Students</p>
       </div>
-      <div class="stat-item">
-        <h3><span class="counter" data-target="250">0</span>+</h3>
+      <div class="stat">
+        <h2 data-target="50">0</h2>
         <p>Present Students</p>
       </div>
-      <div class="stat-item">
-        <h3><span class="counter" data-target="20">0</span>+</h3>
+      <div class="stat">
+        <h2 data-target="5">0</h2>
         <p>Courses Offered</p>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-      <h2>About Us</h2>
-      <p>
-        We provide world-class IT training programs that prepare you for the
-        future of technology. Learn practical skills in web development,
-        networking, cybersecurity, and more.
-      </p>
-      <a href="about.html" class="btn">Learn More</a>
-    </section>
+    <!--The About Us Section-->
+    <section class="about-section" id="about">
+      <div class="content-wrapper">
+        <div class="left-side">
+          <div class="image-container top-image scroll-left">
+            <img src="images/About-img1.png" alt="Team collaboration" />
+          </div>
+          <div class="image-container bottom-image scroll-left">
+            <img src="images/About-img2.png" alt="Person coding" />
+          </div>
+        </div>
 
-    <!-- Courses Section -->
-    <section class="courses" id="courses">
-      <div class="container">
-        <h2 class="section-title">Our Courses</h2>
-        <div class="courses-grid">
-          <div class="course-card" id="cybersecurity">
-            <img src="images/courses/Cybersecurtiy.jpg" alt="Cybersecurity" />
-            <h3>Cybersecurity</h3>
-
-            <p>
-              Learn how to protect systems, networks, and data from cyber
-              threats. This course covers security principles, risk management,
-              and ethical hacking fundamentals.
-            </p>
-            <a class="course-btn" href="./course-contents/cybersecurity.html"
-              >Learn More
-            </a>
+        <div class="right-side">
+          <div class="header">
+            <h2>
+              <div class="triangles scroll-left">
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+              </div>
+              ABOUT US
+            </h2>
+            <div class="intro-box scroll-right">
+              <p>
+                We provide world-class IT training programs that prepare you for
+                the future of technology. Learn practical skills in web
+                development, networking, cyber security and more.
+              </p>
+            </div>
           </div>
 
-          <div class="course-card" id="uiux">
-            <img src="images/courses/UI-UX designers.jpg" alt="UI/UX Design" />
-            <h3>UI/UX Design</h3>
+          <div class="mission-vision scroll-animate">
+            <div class="card">
+              <h3>Our Mission</h3>
+              <p>
+                To empower young individuals with practical IT skills in design,
+                coding, and emerging technologies—helping them transform ideas
+                into innovation and opportunities into suc
+              </p>
+            </div>
 
-            <p>
-              Master the art of creating user-friendly digital experiences. From
-              wireframing to prototyping, this course covers both design
-              thinking and usability testing.
-            </p>
-            <a class="course-btn" href="./course-contents/ui-ux-design.html"
-              >Learn More
-            </a>
-          </div>
-
-          <div class="course-card" id="data">
-            <img src="images/courses/Data analysers.jpg" alt="Data Analytics" />
-            <h3>Data Analytics</h3>
-
-            <p>
-              Develop skills to interpret and analyze data. Learn tools like
-              Excel, SQL, and Python to make data-driven decisions and generate
-              business insights.
-            </p>
-            <a class="course-btn" href="./course-contents/data-analysis.html"
-              >Learn More
-            </a>
-          </div>
-
-          <div class="course-card" id="marketing">
-            <img
-              src="images/courses/digital marketers.jpg"
-              alt="Digital Marketing"
-            />
-            <h3>Digital Marketing</h3>
-
-            <p>
-              Learn SEO, social media strategy, email campaigns, and paid ads.
-              This course equips you with the tools to grow brands publibity
-              online effectively.
-            </p>
-            <a
-              class="course-btn"
-              href="./course-contents/digital-marketing.html"
-              >Learn More
-            </a>
-          </div>
-
-          <div class="course-card" id="software">
-            <img
-              src="images/courses/software developers.jpg"
-              alt="Software Development"
-            />
-            <h3>Software Development</h3>
-
-            <p>
-              Gain strong programming fundamentals and learn to build robust
-              applications. Covers coding practices, debugging, and software
-              lifecycle.
-            </p>
-            <a
-              class="course-btn"
-              href="./course-contents/software-development.html"
-              >Learn More
-            </a>
-          </div>
-
-          <div class="course-card" id="frontend">
-            <img
-              src="images/courses/frontend developers.jpg"
-              alt="Frontend Web Development"
-            />
-            <h3>Frontend Development</h3>
-
-            <p>
-              Learn HTML, CSS, and JavaScript to build responsive, interactive
-              websites. This course includes modern frameworks like React and
-              Vue.
-            </p>
-            <a
-              class="course-btn"
-              href="./course-contents/frontend-development.html"
-              >Learn More
-            </a>
-          </div>
-
-          <div class="course-card" id="product">
-            <img
-              src="images/courses/Project management.jpg"
-              alt="Product Management"
-            />
-            <h3>Product Management</h3>
-
-            <p>
-              Understand how to manage products from concept to launch. Covers
-              roadmapping, agile methodology, and stakeholder communication.
-            </p>
-            <a
-              class="course-btn"
-              href="./course-contents/product-management.html"
-              >Learn More
-            </a>
-          </div>
-
-          <div class="course-card" id="Backend">
-            <img
-              src="images/courses/Graphics & Visual Design + AI Tools.jpg"
-              alt="Backend Development"
-            />
-            <h3>Backend Development</h3>
-
-            <p>
-              Learn how to power the web by handling behind-the-scenes
-              functionality, connecting the web to databases and managing user
-              connections
-            </p>
-            <a
-              class="course-btn"
-              href="./course-contents/backend-development.html"
-              >Learn More
-            </a>
+            <div class="card">
+              <h3>Our Vision</h3>
+              <p>
+                To become Africa's leading hub for digital innovation and tech
+                driven education.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <a href="courses.html" class="btn">View All Courses</a>
     </section>
 
-    <!-- WhatsApp Floating Button -->
-    <a
-      href="https://wa.me/2348188888823"
-      class="whatsapp-float"
-      target="_blank"
-      aria-label="Chat with us on WhatsApp"
-    >
-      <img src="images/whatsapp-icon.png" alt="WhatsApp Chat" />
-    </a>
+    <!-- Courses Section -->
+    <section class="course-container" id="courses">
+      <h1 class="scroll-fade">Courses We Offer</h1>
 
-    <!--why choose us?-->
+      <div class="tabs-container scroll-animate">
+        <button class="tab-button active" data-course="graphic-design">
+          Graphic Design
+        </button>
+        <button class="tab-button" data-course="social-media">
+          Social Media Management
+        </button>
+        <button class="tab-button" data-course="web-dev">
+          Web Development
+        </button>
+        <button class="tab-button" data-course="virtual-assistant">
+          Virtual Assistant
+        </button>
+        <button class="tab-button" data-course="video-editing">
+          Video Editing
+        </button>
+        <span class="swipe-indicator">‹</span>
+      </div>
 
+      <div class="content-wrapper">
+        <div class="course-content active" data-content="graphic-design">
+          <div class="text-content">
+            <h2>Graphics / UI/UX Design</h2>
+            <p>
+              Design stunning visuals and user-friendly interfaces. Gain skills
+              in Adobe tools, Figma, and modern design principles for digital
+              creativity.
+            </p>
+            <button class="enroll-btn">Enroll Course</button>
+          </div>
+          <div class="image-content">
+            <img
+              src="images/Graphics design Course img.png"
+              alt="Graphic Design Student"
+            />
+          </div>
+        </div>
+
+        <div class="course-content" data-content="social-media">
+          <div class="text-content">
+            <h2>Social Media Management</h2>
+            <p>
+              Learn how to grow and manage online communities effectively.
+              Master content creation, analytics, and social media strategy
+              across major platforms.
+            </p>
+
+            <button class="enroll-btn">Enroll Course</button>
+          </div>
+          <div class="image-content">
+            <img
+              src="images/social media manager.jpg"
+              alt="Social Media Apps"
+            />
+          </div>
+        </div>
+
+        <div class="course-content" data-content="web-dev">
+          <div class="text-content">
+            <h2>Frontend Development</h2>
+            <p>
+              Build responsive and interactive websites. Learn HTML, CSS,
+              JavaScript, and modern frameworks.
+            </p>
+            <button class="enroll-btn">Enroll Course</button>
+          </div>
+          <div class="image-content">
+            <img
+              src="images/software developers.jpg"
+              alt="Frontend Developer"
+            />
+          </div>
+        </div>
+
+        <div class="course-content" data-content="virtual-assistant">
+          <div class="text-content">
+            <h2>Virtual Assistant</h2>
+            <p>
+              Develop essential administrative and digital support skills.
+              Manage emails, schedules, and online tasks efficiently using
+              modern productivity tools.
+            </p>
+            <button class="enroll-btn">Enroll Course</button>
+          </div>
+          <div class="image-content">
+            <img
+              src="images/vitual assistant.jpg"
+              alt="Virtual Assistant"
+            />
+          </div>
+        </div>
+
+        <div class="course-content" data-content="video-editing">
+          <div class="text-content">
+            <h2>Video Editing</h2>
+            <p>
+              Enhance your storytelling skills through video. Learn editing
+              techniques, transitions, color grading, and motion graphics using
+              industry tools.
+            </p>
+
+            <button class="enroll-btn">Enroll Course</button>
+          </div>
+          <div class="image-content">
+            <img
+              src="images/video editor.jpg"
+              alt="video editor"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--WHY CHOOSE US??-->
     <section class="why-choose-us" id="why-us">
       <div class="container">
         <div class="why-grid">
           <!-- Left Content -->
           <div class="why-content">
-            <h2>Why Choose Us?</h2>
-            <p>
-              At our IT training center, we go beyond traditional learning. We
-              blend hands-on projects, real-world tools, and expert mentorship
-              to help you thrive in your career.
-            </p>
+            <div class="why-header scroll-animate">
+              <h2>WHY CHOOSE US?</h2>
+              <p>
+                At our IT training center, we go beyond traditional learning. We
+                blend hands-on projects, real-world tools, and expert mentorship
+                to help you thrive in your career.
+              </p>
+            </div>
 
             <div class="why-icons">
-              <div class="icon-box">
+              <div class="icon-box scroll-left">
                 <img src="images/chalkboard.png" alt="Instructors" />
                 <h4>Expert Instructors</h4>
                 <p>
@@ -319,7 +281,7 @@
                 </p>
               </div>
 
-              <div class="icon-box">
+              <div class="icon-box scroll-right">
                 <img src="images/programming.png" alt="" />
                 <h4>Practical Training</h4>
                 <p>
@@ -327,7 +289,7 @@
                 </p>
               </div>
 
-              <div class="icon-box">
+              <div class="icon-box scroll-left">
                 <img src="images/group.png" alt="" />
                 <h4>Community Support</h4>
                 <p>
@@ -335,7 +297,7 @@
                 </p>
               </div>
 
-              <div class="icon-box">
+              <div class="icon-box scroll-right">
                 <img src="images/briefcase.png" alt="" />
                 <h4>Career Focused</h4>
                 <p>
@@ -352,11 +314,6 @@
               src="images/students learning.jpg"
               alt="Students learning"
               class="img1"
-            />
-            <img
-              src="images/team collab.jpg"
-              alt="Team collaboration"
-              class="img2"
             />
           </div>
         </div>
@@ -375,119 +332,168 @@
       /></span>
     </section>
 
-    <!--Testimonial section-->
-    <section class="testimonials-container">
-      <h2 class="section-title">What Our Students Say</h2>
-
-      <div class="carousel-wrapper">
-
-
-        <div class="carousel-container" id="carouselContainer">
-          <div class="testimonial-slide active">
+    <!--OUR PARTNERS-->
+    <section class="partners-container">
+      <section class="partners-section">
+        <h2 class="scroll-left">OUR PARTNERS</h2>
+        <div class="partners-logos scroll-right">
+          <div class="partner">
             <img
-              src="https://images.unsplash.com/photo-1494790108755-2616b612b932?w=150&h=150&fit=crop&crop=face"
-              alt="Sarah Johnson"
-              class="user-image"
+              src="images/LearnSmart Logo Dark 1.png"
+              alt="LearnSmart Logo"
             />
-            <h3 class="user-name">Sarah Johnson</h3>
-            <p class="user-role">Marketing Director</p>
-            <p class="review-text">
-              The UI/UX course completely changed my career path. The
-              instructors guided me from the basics of wireframing to advanced
-              prototyping. I landed my first role as a junior designer just
-              weeks after graduating.
-            </p>
-            <div class="rating">
-              <span class="star">★</span>
-              <span class="star">★</span>
-              <span class="star">★</span>
-              <span class="star">★</span>
-              <span class="star">★</span>
+          </div>
+          <div class="partner">
+            <img src="images/providous logo.png" alt="Providus Bank Logo" />
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="testimonials-header scroll-animate">
+        <h2>STUDENT TESTIMONIALS</h2>
+        <p>
+          Hear from our successful graduates who transformed their careers with
+          TechHive
+        </p>
+      </div>
+
+      <div class="testimonials-wrapper">
+        <div class="testimonials-track" id="testimonialsTrack">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='40' fill='%230a1628'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-family='Arial' font-size='32' font-weight='bold'%3EAO%3C/text%3E%3C/svg%3E"
+                alt="Student"
+              />
             </div>
+            <h3>Adewale Ogunleye</h3>
+            <p class="job-title">Frontend Developer</p>
+            <div class="star-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+            </div>
+            <p class="testimonial-text">
+              "TechHive transformed my career! The hands-on projects and
+              mentorship helped me land my dream job. I learned modern web
+              development, responsive design, and best coding practices."
+            </p>
           </div>
 
-          <div class="testimonial-slide">
-            <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
-              alt="Michael Chen"
-              class="user-image"
-            />
-            <h3 class="user-name">Michael Chen</h3>
-            <p class="user-role">Tech Startup CEO</p>
-            <p class="review-text">
-              The cybersecurity program was intense but rewarding. From
-              penetration testing to incident response, I gained real-world
-              skills I now use daily in my job.
-            </p>
-            <div class="rating">
-              <span class="star">★</span>
-              <span class="star">★</span>
-              <span class="star">★</span>
-              <span class="star">★</span>
-              <span class="star">★</span>
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='40' fill='%2300d4ff'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%230a1628' font-family='Arial' font-size='32' font-weight='bold'%3ECN%3C/text%3E%3C/svg%3E"
+                alt="Student"
+              />
             </div>
+            <h3>Chioma Nwankwo</h3>
+            <p class="job-title">UI/UX Designer</p>
+            <div class="star-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+            </div>
+            <p class="testimonial-text">
+              "The UI/UX program exceeded my expectations. I learned user
+              research, prototyping, and design thinking. The instructors were
+              patient and the learning environment was excellent."
+            </p>
           </div>
 
-          <div class="testimonial-slide">
-            <img
-              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
-              alt="Emily Rodriguez"
-              class="user-image"
-            />
-            <h3 class="user-name">Aisha Ahmed</h3>
-            <p class="user-role">E-commerce Owner</p>
-            <p class="review-text">
-              The data analytics training gave me a solid foundation in Python,
-              SQL, and visualization tools. The projects prepared me for real
-              workplace challenges.
-            </p>
-            <div class="rating">
-              <span class="star">★</span>
-              <span class="star">★</span>
-              <span class="star">★</span>
-              <span class="star">★</span>
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='40' fill='%230a1628'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-family='Arial' font-size='32' font-weight='bold'%3EMB%3C/text%3E%3C/svg%3E"
+                alt="Student"
+              />
+            </div>
+            <h3>Michael Bassey</h3>
+            <p class="job-title">Social Media Management</p>
+            <div class="star-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
               <span class="star">★</span>
             </div>
+            <p class="testimonial-text">
+              "This course helped me understand how to grow brands online. I can
+              now plan content, schedule posts, and run ads confidently."
+            </p>
           </div>
 
-          <div class="testimonial-slide">
-            <img
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-              alt="David Thompson"
-              class="user-image"
-            />
-            <h3 class="user-name">Heritage Akinbowale</h3>
-            <p class="user-role">Software Devolper LS</p>
-            <p class="review-text">
-              As a software development student, I learned to build complete
-              projects from scratch. The capstone project gave me confidence to
-              work in a startup environment.
-            </p>
-            <div class="rating">
-              <span class="star">★</span>
-              <span class="star">★</span>
-              <span class="star">★</span>
-              <span class="star">★</span>
-              <span class="star">★</span>
+          <!-- Testimonial 4 -->
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='40' fill='%2300d4ff'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%230a1628' font-family='Arial' font-size='32' font-weight='bold'%3EFI%3C/text%3E%3C/svg%3E"
+                alt="Student"
+              />
             </div>
+            <h3>Fatima Ibrahim</h3>
+            <p class="job-title">Virtual Assistant</p>
+            <div class="star-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+            </div>
+            <p class="testimonial-text">
+              "I learned how to manage clients, organize tasks, and use tools
+              like Google Workspace. Now I work remotely with ease."
+            </p>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='40' fill='%230a1628'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-family='Arial' font-size='32' font-weight='bold'%3ETO%3C/text%3E%3C/svg%3E"
+                alt="Student"
+              />
+            </div>
+            <h3>Tunde Olowu</h3>
+            <p class="job-title">Video Editing & Content Crreation</p>
+            <div class="star-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+            </div>
+            <p class="testimonial-text">
+              "The lessons made editing simple and fun. I can now create
+              high-quality videos and social media content for my brand"
+            </p>
           </div>
         </div>
       </div>
 
-      <div class="carousel-nav">
-        <div class="nav-dot active" onclick="goToSlide(0)"></div>
-        <div class="nav-dot" onclick="goToSlide(1)"></div>
-        <div class="nav-dot" onclick="goToSlide(2)"></div>
-        <div class="nav-dot" onclick="goToSlide(3)"></div>
+      <div class="testimonial-dots" id="testimonialDots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="faq-container">
+<section class="faq-container" id="faqs">
       <div class="faq-header">
         <h1 class="faq-title">Frequently Asked Questions</h1>
         <p class="faq-subtitle">
-          Get instant answers to common questions about our IT services,
+          Get instant answers to common questions about our Tech school services,
           support, and solutions
         </p>
       </div>
@@ -644,76 +650,118 @@
           <div class="faq-answer">
             <div class="faq-answer-content">
               Absolutely! Every course includes real-world projects and case
-              studies to ensure you apply what you learn. By the end, you’ll
+              studies to ensure you apply what you learn. By the end, you'll
               have portfolio-ready work to showcase to potential employers.
             </div>
           </div>
         </div>
       </div>
-
-      <div class="contact-cta">
-        <h3 class="cta-title">Still Have Questions?</h3>
-        <p class="cta-text">
-          Our expert team is ready to provide personalized answers and solutions
-          for your specific IT needs.
-        </p>
-        <a href="https://wa.me/2348188888823" class="cta-button">Get In Touch</a>
-      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-about">
-          <h3>Learn Smart</h3>
+      <div class="footer-content">
+        <div class="footer-section">
+          <a href="https://lss.ng/" target="_blank" class="logo">
+            <img src="/images/Tech Hive.png" />
+          </a>
           <p>
-            Empowering students with hands-on IT skills to thrive in today’s
-            digital world.
+            Empowering young futures in tech through world-class training
+            programs and hands-on learning experiences.
           </p>
+          <div class="footer-social">
+            <a href="#" class="footer-social-icon">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-icon">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-icon">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-icon">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
 
-        <!-- Quick Links -->
-        <div class="footer-links">
+        <div class="footer-section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#registration">Registration</a></li>
           </ul>
         </div>
 
-        <!-- Newsletter -->
-        <div class="footer-newsletter">
-          <h4>Join Our Newsletter</h4>
-          <p>Subscribe to get updates on new courses and career tips.</p>
-          <form id="newsletterForm">
-            <input
-              type="email"
-              id="newsletterEmail"
-              placeholder="Enter your email"
-              required
-            />
-            <button type="submit">Subscribe</button>
-          </form>
-          <p id="newsletterMsg"></p>
+        <div class="footer-section">
+          <h4>Popular Courses</h4>
+          <ul>
+            <li><a href="./course-contents/ui-ux-design.html">Graphics Design</a></li>
+            <li><a href="./course-contents/frontend-development.html">Web Development</a></li>
+            <li><a href="./course-contents/social-media-management.html">Social Media Management</a></li>
+            <li><a href="./course-contents/virtual-assistant.html">Virtual Assistant</a></li>
+            <li><a href="./course-contents/video-editing.html">Video Editing</a></li>
+          </ul>
         </div>
 
-        <!-- Contact -->
-        <div class="footer-contact">
-          <h4>Contact Us</h4>
-          <p>📍 20A, Idiroko Road, Sango Ota</p>
-          <p>📞 +234 818 888 8823</p>
-          <p>📧 info@lss.com</p>
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <ul>
+            <li>Km 1, Idiroko Road, Sango Ota,</li>
+            <li>Ogun State, Nigeria</li>
+            <li>+234 818 888 8823, +234 816 454 0580</li>
+            <li>info@techhive.com</li>
+          </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 Learn Smart. All Rights Reserved.</p>
+        <p>&copy; 2025 TechHive. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
       </div>
     </footer>
-
     <script src="script.js"></script>
   </body>
 </html>

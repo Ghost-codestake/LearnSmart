@@ -1,400 +1,342 @@
-// Highlight Active Page in Navigation
-function setActivePage() {
-  const currentPage = window.location.pathname.split("/").pop();
-  document.querySelectorAll("nav a").forEach((link) => {
-    if (link.getAttribute("href") === currentPage) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
+//Nav Scroll Animation
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+      const startPosition = window.pageYOffset;
+      const targetPosition = targetSection.offsetTop;
+      const distance = targetPosition - startPosition;
+      const duration = 1200; // Duration in milliseconds (1200ms = 1.2 seconds)
+      let start = null;
+
+      function animation(currentTime) {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      // Easing function for smooth animation
+      function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return (c / 2) * t * t + b;
+        t--;
+        return (-c / 2) * (t * (t - 2) - 1) + b;
+      }
+
+      requestAnimationFrame(animation);
     }
   });
-}
-window.onload = setActivePage;
+});
 
 // Hamburger Menu Toggle
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav");
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("nav");
 
-if (menuToggle) {
-  menuToggle.addEventListener("click", () => {
-    nav.classList.toggle("show");
-    menuToggle.classList.toggle("open");
-  });
-}
-
-// Counter Animation
-const counters = document.querySelectorAll(".counter");
-const speed = 200; // lower = faster
-
-counters.forEach((counter) => {
-  const updateCount = () => {
-    const target = +counter.getAttribute("data-target");
-    const count = +counter.innerText;
-
-    const increment = Math.ceil(target / speed);
-
-    if (count < target) {
-      counter.innerText = count + increment;
-      setTimeout(updateCount, 30);
-    } else {
-      counter.innerText = target;
-    }
-  };
-
-  // Run counter when in viewport
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          updateCount();
-          observer.unobserve(counter); // run only once
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  observer.observe(counter);
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  nav.classList.toggle("active");
 });
 
-/*Hero Carousel*/
-let slides = document.querySelectorAll(".slide");
-let dotsContainer = document.querySelector(".carousel-dots");
-let currentIndex = 0;
-let slideInterval;
-
-// Create dots dynamically
-slides.forEach((_, i) => {
-  let dot = document.createElement("span");
-  if (i === 0) dot.classList.add("active");
-  dotsContainer.appendChild(dot);
-
-  dot.addEventListener("click", () => {
-    showSlide(i);
-  });
+// Mobile Dropdown Toggle
+const dropdown = document.getElementById("dropdown");
+dropdown.addEventListener("click", (e) => {
+  if (window.innerWidth <= 768) {
+    e.preventDefault();
+    dropdown.classList.toggle("active");
+  }
 });
 
-let dots = document.querySelectorAll(".carousel-dots span");
-
-// Show slide function
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove("active");
-    dots[i].classList.remove("active");
-    if (i === index) {
-      slide.classList.add("active");
-      dots[i].classList.add("active");
+// Close menu when clicking on a link (except dropdown parent)
+document.querySelectorAll(".nav-links a, .cta-btn").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    if (!link.parentElement.classList.contains("dropdown")) {
+      hamburger.classList.remove("active");
+      nav.classList.remove("active");
     }
   });
-  currentIndex = index;
-}
-
-// Next/Prev Controls
-document.querySelector(".next").addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % slides.length;
-  showSlide(currentIndex);
-  resetInterval();
 });
 
-document.querySelector(".prev").addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  showSlide(currentIndex);
-  resetInterval();
-});
+//Count Animation
+function animateCounters() {
+  const counters = document.querySelectorAll(".stat h2");
+  const speed = 200; // lower = faster
 
-// Auto Slide
-function startSlideShow() {
-  slideInterval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  }, 5000); // 5s
-}
+  counters.forEach((counter) => {
+    const updateCount = () => {
+      const target = +counter.getAttribute("data-target");
+      const count = +counter.innerText;
+      const increment = target / speed;
 
-function resetInterval() {
-  clearInterval(slideInterval);
-  startSlideShow();
-}
-
-// Init
-showSlide(0);
-startSlideShow();
-
-/*The scroll animation*/
-// Universal Scroll Animation System
-class ScrollAnimations {
-  constructor(options = {}) {
-    this.options = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-      animateOnce: true,
-      ...options,
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 10);
+      } else {
+        counter.innerText = target + "+";
+      }
     };
 
-    this.observer = null;
-    this.init();
-  }
-
-  init() {
-    // Create Intersection Observer
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-
-          // Stop observing if animateOnce is true
-          if (this.options.animateOnce) {
-            this.observer.unobserve(entry.target);
-          }
-        } else if (!this.options.animateOnce) {
-          // Remove visible class if element is out of view and animateOnce is false
-          entry.target.classList.remove("visible");
-        }
-      });
-    }, this.options);
-
-    // Start observing elements
-    this.observe();
-  }
-
-  observe() {
-    const elements = document.querySelectorAll(".scroll-animate");
-    elements.forEach((el) => this.observer.observe(el));
-  }
-
-  // Method to add new elements dynamically
-  addElement(element) {
-    this.observer.observe(element);
-  }
-
-  // Method to refresh/re-observe all elements
-  refresh() {
-    this.observe();
-  }
-
-  // Method to destroy observer
-  destroy() {
-    if (this.observer) {
-      this.observer.disconnect();
-    }
-  }
+    updateCount();
+  });
 }
 
-// Initialize animations when DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  const scrollAnimations = new ScrollAnimations({
-    threshold: 0.1,
-    rootMargin: "0px 0px -100px 0px",
-    animateOnce: false, // Set to false for repeating animations
-  });
+// Trigger when stats section appears in viewport
+const statsSection = document.querySelector(".stats");
+let statsShown = false;
 
-  // Make it globally available for dynamic content
-  window.scrollAnimations = scrollAnimations;
+window.addEventListener("scroll", () => {
+  const sectionTop = statsSection.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (sectionTop < windowHeight - 100 && !statsShown) {
+    animateCounters();
+    statsShown = true;
+  }
 });
 
-// Example of adding animations to dynamic content
-function addDynamicContent() {
-  const newElement = document.createElement("div");
-  newElement.className = "scroll-animate fade-up";
-  newElement.innerHTML = "<p>I was added dynamically!</p>";
+//Courses Display And Media queery control
+const tabs = document.querySelectorAll(".tab-button");
+const contents = document.querySelectorAll(".course-content");
+const tabsContainer = document.querySelector(".tabs-container");
+const swipeIndicator = document.querySelector(".swipe-indicator");
 
-  document.body.appendChild(newElement);
-  window.scrollAnimations.addElement(newElement);
-}
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const course = tab.getAttribute("data-course");
 
-//Testimonials
-let currentSlide = 0;
-const totalSlides = 4;
-let autoSlideInterval;
+    tabs.forEach((t) => t.classList.remove("active"));
+    tab.classList.add("active");
 
-function updateCarousel() {
-  const container = document.getElementById("carouselContainer");
-  const slides = document.querySelectorAll(".testimonial-slide");
-  const dots = document.querySelectorAll(".nav-dot");
-
-  // Move carousel
-  container.style.transform = `translateX(-${currentSlide * 25}%)`;
-
-  // Update active states
-  slides.forEach((slide, index) => {
-    slide.classList.toggle("active", index === currentSlide);
+    contents.forEach((content) => {
+      if (content.getAttribute("data-content") === course) {
+        content.classList.add("active");
+      } else {
+        content.classList.remove("active");
+      }
+    });
   });
+});
 
-  dots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === currentSlide);
+// Hide swipe indicator after user scrolls
+if (tabsContainer && swipeIndicator) {
+  tabsContainer.addEventListener(
+    "scroll",
+    () => {
+      swipeIndicator.style.opacity = "0";
+      setTimeout(() => {
+        swipeIndicator.style.display = "none";
+      }, 300);
+    },
+    { once: true }
+  );
+}
+
+// Testimonials Carousel
+let currentTestimonialIndex = 0;
+const testimonialsTrack = document.getElementById("testimonialsTrack");
+const testimonialDots = document.querySelectorAll(".dot");
+const totalTestimonials = 5;
+let testimonialsPerView = 3;
+let autoAdvanceInterval;
+
+function updateTestimonialsPerView() {
+  if (window.innerWidth <= 768) {
+    testimonialsPerView = 1;
+  } else if (window.innerWidth <= 1024) {
+    testimonialsPerView = 2;
+  } else {
+    testimonialsPerView = 3;
+  }
+}
+
+function updateTestimonialCarousel() {
+  const cardWidth =
+    testimonialsTrack.querySelector(".testimonial-card").offsetWidth;
+  const gap = window.innerWidth <= 768 ? 24 : 32;
+  const offset = -(currentTestimonialIndex * (cardWidth + gap));
+  testimonialsTrack.style.transform = `translateX(${offset}px)`;
+
+  // Update dots
+  testimonialDots.forEach((dot, index) => {
+    dot.classList.remove("active");
+    if (index === currentTestimonialIndex) {
+      dot.classList.add("active");
+    }
   });
 }
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  updateCarousel();
-  resetAutoSlide();
+function nextTestimonial() {
+  const maxIndex = totalTestimonials - testimonialsPerView;
+  currentTestimonialIndex =
+    currentTestimonialIndex + 1 > maxIndex ? 0 : currentTestimonialIndex + 1;
+  updateTestimonialCarousel();
 }
 
-function previousSlide() {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  updateCarousel();
-  resetAutoSlide();
+function startAutoAdvance() {
+  stopAutoAdvance();
+  autoAdvanceInterval = setInterval(nextTestimonial, 5000);
 }
 
-function goToSlide(slideIndex) {
-  currentSlide = slideIndex;
-  updateCarousel();
-  resetAutoSlide();
+function stopAutoAdvance() {
+  if (autoAdvanceInterval) {
+    clearInterval(autoAdvanceInterval);
+  }
 }
 
-function startAutoSlide() {
-  autoSlideInterval = setInterval(nextSlide, 5000);
-}
+// Auto advance testimonials
+startAutoAdvance();
 
-function resetAutoSlide() {
-  clearInterval(autoSlideInterval);
-  startAutoSlide();
-}
+// Dot click handlers
+testimonialDots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    currentTestimonialIndex = index;
+    updateTestimonialCarousel();
+    stopAutoAdvance();
+    startAutoAdvance();
+  });
+});
 
-// Touch/swipe support for mobile
+// Touch/Swipe functionality for mobile
 let touchStartX = 0;
 let touchEndX = 0;
+let isDragging = false;
 
-function handleTouchStart(e) {
-  touchStartX = e.changedTouches[0].screenX;
-}
+testimonialsTrack.addEventListener(
+  "touchstart",
+  (e) => {
+    touchStartX = e.touches[0].clientX;
+    isDragging = true;
+    stopAutoAdvance();
+  },
+  { passive: true }
+);
 
-function handleTouchEnd(e) {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
-}
+testimonialsTrack.addEventListener(
+  "touchmove",
+  (e) => {
+    if (!isDragging) return;
+    touchEndX = e.touches[0].clientX;
+  },
+  { passive: true }
+);
 
-function handleSwipe() {
+testimonialsTrack.addEventListener("touchend", () => {
+  if (!isDragging) return;
+  isDragging = false;
+
   const swipeThreshold = 50;
   const diff = touchStartX - touchEndX;
 
   if (Math.abs(diff) > swipeThreshold) {
+    const maxIndex = totalTestimonials - testimonialsPerView;
+
     if (diff > 0) {
-      nextSlide();
+      // Swipe left - next
+      currentTestimonialIndex = Math.min(currentTestimonialIndex + 1, maxIndex);
     } else {
-      previousSlide();
+      // Swipe right - previous
+      currentTestimonialIndex = Math.max(currentTestimonialIndex - 1, 0);
     }
+
+    updateTestimonialCarousel();
   }
-}
 
-// Initialize carousel
-document.addEventListener("DOMContentLoaded", function () {
-  const carouselWrapper = document.querySelector(".carousel-wrapper");
+  startAutoAdvance();
+});
 
-  // Add touch event listeners
-  carouselWrapper.addEventListener("touchstart", handleTouchStart, {
-    passive: true,
-  });
-  carouselWrapper.addEventListener("touchend", handleTouchEnd, {
-    passive: true,
-  });
+// Mouse drag functionality for desktop
+let mouseStartX = 0;
+let mouseEndX = 0;
+let isMouseDragging = false;
 
-  // Start auto-slide
-  startAutoSlide();
+testimonialsTrack.addEventListener("mousedown", (e) => {
+  mouseStartX = e.clientX;
+  isMouseDragging = true;
+  testimonialsTrack.style.cursor = "grabbing";
+  stopAutoAdvance();
+});
 
-  // Pause auto-slide on hover (desktop only)
-  carouselWrapper.addEventListener("mouseenter", () => {
-    clearInterval(autoSlideInterval);
-  });
+document.addEventListener("mousemove", (e) => {
+  if (!isMouseDragging) return;
+  mouseEndX = e.clientX;
+});
 
-  carouselWrapper.addEventListener("mouseleave", () => {
-    startAutoSlide();
-  });
+document.addEventListener("mouseup", () => {
+  if (!isMouseDragging) return;
+  isMouseDragging = false;
+  testimonialsTrack.style.cursor = "grab";
 
-  // Keyboard navigation
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") {
-      previousSlide();
-    } else if (e.key === "ArrowRight") {
-      nextSlide();
+  const swipeThreshold = 50;
+  const diff = mouseStartX - mouseEndX;
+
+  if (Math.abs(diff) > swipeThreshold) {
+    const maxIndex = totalTestimonials - testimonialsPerView;
+
+    if (diff > 0) {
+      currentTestimonialIndex = Math.min(currentTestimonialIndex + 1, maxIndex);
+    } else {
+      currentTestimonialIndex = Math.max(currentTestimonialIndex - 1, 0);
+    }
+
+    updateTestimonialCarousel();
+  }
+
+  startAutoAdvance();
+});
+
+// Update on resize
+window.addEventListener("resize", () => {
+  updateTestimonialsPerView();
+  updateTestimonialCarousel();
+});
+
+// Initial setup
+updateTestimonialsPerView();
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+  const question = item.querySelector(".faq-question");
+
+  question.addEventListener("click", () => {
+    const isActive = item.classList.contains("active");
+
+    // Close all items
+    faqItems.forEach((otherItem) => {
+      otherItem.classList.remove("active");
+    });
+
+    // Open clicked item if it wasn't active
+    if (!isActive) {
+      item.classList.add("active");
     }
   });
 });
 
-// Pause auto-slide when page is not visible
-document.addEventListener("visibilitychange", function () {
-  if (document.hidden) {
-    clearInterval(autoSlideInterval);
-  } else {
-    startAutoSlide();
-  }
-});
+// Scroll Animation Observer
+const observerOptions = {
+  threshold: 0.15,
+  rootMargin: "0px 0px -50px 0px",
+};
 
-//faq section
-document.addEventListener("DOMContentLoaded", function () {
-  const faqItems = document.querySelectorAll(".faq-item");
-
-  faqItems.forEach((item) => {
-    const question = item.querySelector(".faq-question");
-    const answer = item.querySelector(".faq-answer");
-
-    question.addEventListener("click", () => {
-      const isActive = item.classList.contains("active");
-
-      // Close all other FAQ items
-      faqItems.forEach((otherItem) => {
-        if (otherItem !== item) {
-          otherItem.classList.remove("active");
-        }
-      });
-
-      // Toggle current item
-      if (isActive) {
-        item.classList.remove("active");
-      } else {
-        item.classList.add("active");
-      }
-    });
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    } else {
+      entry.target.classList.remove("active");
+    }
   });
+}, observerOptions);
 
-  // Add smooth scroll animation for CTA button
-  document.querySelector(".cta-button").addEventListener("click", function (e) {
-    e.preventDefault();
-    // Add your contact form scroll logic here
-    console.log("Contact button clicked");
-  });
+// Observe all elements with scroll animation classes
+const animateElements = document.querySelectorAll(
+  ".scroll-animate, .scroll-fade, .scroll-left, .scroll-right, .scroll-scale"
+);
 
-  // Add entrance animation
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  }, observerOptions);
-
-  // Initially hide FAQ items for animation
-  faqItems.forEach((item, index) => {
-    item.style.opacity = "0";
-    item.style.transform = "translateY(30px)";
-    item.style.transition = `opacity 0.6s ease ${
-      index * 0.1
-    }s, transform 0.6s ease ${index * 0.1}s`;
-    observer.observe(item);
-  });
-});
-
-
-//Footer
-const newsletterForm = document.getElementById('newsletterForm');
-const newsletterEmail = document.getElementById('newsletterEmail');
-const newsletterMsg = document.getElementById('newsletterMsg');
-
-newsletterForm.addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  if (newsletterEmail.value.trim() === "") {
-    newsletterMsg.style.color = "red";
-    newsletterMsg.textContent = "Please enter a valid email.";
-  } else {
-    newsletterMsg.style.color = "lightgreen";
-    newsletterMsg.textContent = "Thank you for subscribing!";
-    newsletterEmail.value = "";
-  }
-});
+animateElements.forEach((el) => observer.observe(el));

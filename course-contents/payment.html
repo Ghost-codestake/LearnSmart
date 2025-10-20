@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Payment Section</title>
+    <link rel="stylesheet" href="./payment.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="course-info">
+        <div class="course-selector">
+          <label for="courseSelect">Select Course</label>
+          <select id="courseSelect" onchange="updateCourse()">
+            <option value="graphic-design">Graphic Design</option>
+            <option value="social-media-management">Social Media Management</option>
+            <option value="web-development">Web Development</option>
+            <option value="virtual-assistant">Virtaul Assistant</option>
+            <option value="video-editing">Video Editing</option>
+          </select>
+        </div>
+
+        <h1 class="course-title" id="courseTitle">Graphic Design</h1>
+        <p class="course-subtitle" id="courseSubtitle">
+          From fundamentals to brand identity hands-on projects to build your
+          portfolio.
+        </p>
+
+        <div class="course-details">
+          <div class="detail-item">
+            <div>
+              <div class="detail-label">Duration</div>
+              <div class="detail-value" id="courseDuration">12 weeks</div>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div>
+              <div class="detail-label">Format</div>
+              <div class="detail-value">Live Classes + Assignment</div>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div>
+              <div class="detail-label">Outcome</div>
+              <div class="detail-value">Portfolio-ready capstone</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-section">
+          <div class="price-label">PRICE</div>
+          <div class="price" id="coursePrice">₦350,000</div>
+          <div class="price-note">
+            Installment plans available. Early bird discount for the first 20
+            students
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="form-header">
+          <p>Fill in your details below, we'll follow up with next steps.</p>
+        </div>
+
+        <form id="enrollmentForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" placeholder="Gideon" required />
+              <div class="error-message" id="firstNameError">
+                Please enter your first name
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" placeholder="Ubani" required />
+              <div class="error-message" id="lastNameError">
+                Please enter your last name
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="projectmanager@gmail.com"
+                required
+              />
+              <div class="error-message" id="emailError">
+                Please enter a valid email address
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                placeholder="+234 419 419 4119"
+                required
+              />
+              <div class="error-message" id="phoneError">
+                Please enter a valid phone number
+              </div>
+            </div>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="terms" required />
+            <label for="terms"
+              >I agree to the terms & conditions and consent to being contacted
+              about the course</label
+            >
+          </div>
+          <div
+            class="error-message"
+            id="termsError"
+            style="margin-top: -20px; margin-bottom: 15px"
+          >
+            You must agree to the terms & conditions
+          </div>
+
+          <button type="submit" class="submit-btn">Reserve my spot</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="payment.js"></script>
+  </body>
+</html>

@@ -1,67 +1,782 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | IT Training Center</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>
-  <div class="logo">IT Training Center</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - TechHive</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-  <!-- Hamburger -->
-  <div class="menu-toggle" id="menu-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
 
-  <!-- Navigation -->
-  <nav id="navbar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <!-- Dropdown -->
-      <li class="dropdown">
-        <a href="courses.html">Courses ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="courses.html#cybersecurity">Cybersecurity</a></li>
-          <li><a href="courses.html#uiux">UI/UX Design</a></li>
-          <li><a href="courses.html#data">Data Analytics</a></li>
-          <li><a href="courses.html#marketing">Digital Marketing</a></li>
-          <li><a href="courses.html#software">Software Development</a></li>
-          <li><a href="courses.html#frontend">Frontend Web Development</a></li>
-          <li><a href="courses.html#product">Product Management</a></li>
-          <li><a href="courses.html#graphics">Graphics & Visual Design + AI Tools</a></li>
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("./images/contact\ bg.png");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 20px;
+      }
+
+      .header {
+        text-align: center;
+        color: white;
+        margin-bottom: 50px;
+        animation: fadeInDown 0.8s ease-out;
+      }
+
+      .header h1 {
+        font-size: 4rem;
+        font-weight: 400;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-family: "Anton", sans-serif;
+      }
+
+      .header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        max-width: 1100px;
+        width: 100%;
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        animation: fadeInUp 0.8s ease-out;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .contact-info {
+        background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+        padding: 60px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .contact-info h2 {
+        font-size: 2rem;
+        color: #0C2949;
+        margin-bottom: 15px;
+      }
+
+      .contact-info-desc {
+        color: #0C2949;
+        margin-bottom: 40px;
+        line-height: 1.6;
+      }
+
+      .info-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        animation: slideInLeft 0.6s ease-out backwards;
+      }
+
+      .info-item:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .info-item:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      .info-item:nth-child(4) {
+        animation-delay: 0.6s;
+      }
+
+      .info-icon {
+        width: 50px;
+        height: 50px;
+        background: #0C2949;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        flex-shrink: 0;
+      }
+
+      .info-icon i {
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .info-content h3 {
+        color:#0C2949;
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+      }
+
+      .info-content p {
+        color: #0C2949;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .social-media {
+        margin-top: 30px;
+      }
+
+      .social-media h4 {
+        color: #0C2949;
+        margin-bottom: 15px;
+        font-size: 1rem;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        background: #0C2949;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: transform 0.3s ease, background 0.3s ease;
+      }
+
+      .social-icon:hover {
+        transform: translateY(-5px);
+        background: #2d5a8f;
+      }
+
+      .contact-form {
+        padding: 60px 50px;
+        background: white;
+      }
+
+      .contact-form h2 {
+        font-size: 2rem;
+        color: #0C2949;
+        margin-bottom: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      .form-group label {
+        display: block;
+        color: #0C2949;
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        background: #f0f4f8;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: all 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        background: #e2e8f0;
+        box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 16px;
+        background: #0C2949;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .submit-btn:hover {
+        background: #2d5a8f;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(30, 58, 95, 0.3);
+      }
+
+      .submit-btn:active {
+        transform: translateY(0);
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Media Queries */
+      @media screen and (max-width: 1024px) {
+        .header h1 {
+          font-size: 3rem;
+        }
+
+        .contact-container {
+          max-width: 900px;
+        }
+
+        .contact-info,
+        .contact-form {
+          padding: 50px 40px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .hero-section {
+          padding: 40px 15px;
+          background-attachment: scroll;
+        }
+
+        .header {
+          margin-bottom: 30px;
+        }
+
+        .header h1 {
+          font-size: 2.5rem;
+          letter-spacing: 1px;
+        }
+
+        .header p {
+          font-size: 1rem;
+        }
+
+        .contact-container {
+          grid-template-columns: 1fr;
+          max-width: 600px;
+        }
+
+        .contact-form {
+          order: -1;
+          padding: 40px 30px;
+        }
+
+        .contact-info {
+          padding: 40px 30px;
+        }
+
+        .contact-info h2,
+        .contact-form h2 {
+          font-size: 1.6rem;
+        }
+
+        .info-item {
+          margin-bottom: 25px;
+        }
+
+        .info-icon {
+          width: 45px;
+          height: 45px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .hero-section {
+          padding: 30px 10px;
+        }
+
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .header p {
+          font-size: 0.9rem;
+        }
+
+        .contact-info,
+        .contact-form {
+          padding: 30px 25px;
+        }
+
+        .contact-info h2,
+        .contact-form h2 {
+          font-size: 1.4rem;
+          margin-bottom: 20px;
+        }
+
+        .info-item {
+          margin-bottom: 20px;
+        }
+
+        .info-icon {
+          width: 40px;
+          height: 40px;
+          margin-right: 15px;
+        }
+
+        .info-icon i {
+          font-size: 1rem;
+        }
+
+        .info-content h3 {
+          font-size: 1rem;
+        }
+
+        .info-content p {
+          font-size: 0.85rem;
+        }
+
+        .form-group {
+          margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+          padding: 12px;
+          font-size: 0.95rem;
+        }
+
+        .submit-btn {
+          padding: 14px;
+          font-size: 1rem;
+        }
+
+        .social-icon {
+          width: 35px;
+          height: 35px;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media screen and (max-width: 360px) {
+        .header h1 {
+          font-size: 1.7rem;
+        }
+
+        .contact-info,
+        .contact-form {
+          padding: 25px 20px;
+        }
+
+        .contact-container {
+          border-radius: 15px;
+        }
+      }
+
+      @media screen and (min-width: 1400px) {
+        .contact-container {
+          max-width: 1200px;
+        }
+
+        .header h1 {
+          font-size: 4.5rem;
+        }
+
+        .contact-info,
+        .contact-form {
+          padding: 70px 60px;
+        }
+      }
+
+      /* Custom Popup Styles */
+      .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+        animation: fadeIn 0.3s ease;
+      }
+
+      .popup-overlay.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .popup-content {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        max-width: 450px;
+        width: 90%;
+        animation: popupSlideIn 0.4s ease;
+        position: relative;
+      }
+
+      .popup-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #4caf50, #45a049);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        animation: scaleIn 0.5s ease 0.2s backwards;
+      }
+
+      .popup-icon i {
+        color: white;
+        font-size: 2.5rem;
+      }
+
+      .popup-content h3 {
+        color: #1e3a5f;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+
+      .popup-content p {
+        color: #4a5568;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+      }
+
+      .popup-close-btn {
+        background: #1e3a5f;
+        color: white;
+        border: none;
+        padding: 12px 40px;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .popup-close-btn:hover {
+        background: #2d5a8f;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(30, 58, 95, 0.3);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes popupSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-30px) scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .popup-content {
+          padding: 30px 25px;
+        }
+
+        .popup-content h3 {
+          font-size: 1.5rem;
+        }
+
+        .popup-content p {
+          font-size: 1rem;
+        }
+
+        .popup-icon {
+          width: 70px;
+          height: 70px;
+        }
+
+        .popup-icon i {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="https://lss.ng/" target="_blank" class="logo">
+        <img src="/images/Tech Hive.png" />
+      </a>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav id="nav">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="./index.html">Home</a></li>
+          <li class="dropdown" id="dropdown">
+            <a href="#courses">Courses ▾</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="./course-contents/frontend-development.html"
+                  >Web Development</a
+                >
+              </li>
+              <li>
+                <a href="./course-contents/ui-ux-design.html"
+                  >Graphic/UI/UX Design</a
+                >
+              </li>
+              <li>
+                <a href="./course-contents/social-media-management.html"
+                  >Social Media Management</a
+                >
+              </li>
+              <li>
+                <a href="./course-contents/video-editing.html"
+                  >Video Editing & Content Creation</a
+                >
+              </li>
+              <li>
+                <a href="./course-contents/virtual-assistant.html"
+                  >Virtual Assistant</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li><a href="./index.html">About Us</a></li>
+          <li><a href="#registration">Registration</a></li>
+          <li><a href="./index.html">FAQs</a></li>
         </ul>
-      </li>
-      <li><a href="about.html">About</a></li>
 
+        <a href="#" class="cta-btn">Contact us</a>
+      </nav>
 
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+      <a href="#" class="cta-btn">Contact us</a>
+    </header>
 
+    <section class="hero-section">
+      <div class="header">
+        <h1>CONTACT US</h1>
+        <p>Your Future in Tech Starts Here</p>
+      </div>
 
+      <div class="contact-container">
+        <div class="contact-info">
+          <div>
+            <h2>Get in touch</h2>
+            <p class="contact-info-desc">
+              We're here to guide your digital journey, contact us and start
+              your story with Tech Hive today.
+            </p>
 
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-content">
+                <h3>Head Office</h3>
+                <p>No 1, Ukwaji Road, Sisipa Ota<br />Ogun State</p>
+              </div>
+            </div>
 
-<section>
-<h2>Contact Us</h2>
-<form class="card contact-form">
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<textarea placeholder="Your Message" required></textarea>
-<button type="submit" class="btn">Submit</button>
-</form>
-<p>Email: info@ittrainingcenter.com | Phone: +123 456 7890</p>
-</section>
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="info-content">
+                <h3>Email Us</h3>
+                <p>techhivestitute@gmail.com<br />techhive2025@gmail.com</p>
+              </div>
+            </div>
 
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="info-content">
+                <h3>Call Us</h3>
+                <p>+234 818 889 8623<br />+234 816 454 0380</p>
+              </div>
+            </div>
+          </div>
 
-<footer>
-<p>&copy; 2025 IT Training Center | All Rights Reserved</p>
-</footer>
+          <div class="social-media">
+            <h4>Follow our social media</h4>
+            <div class="social-icons">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
 
+        <div class="contact-form">
+          <h2>Send us a message</h2>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                required
+              />
+            </div>
 
-<script src="script.js"></script>
-</body>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Phone"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Message"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Popup -->
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup-content">
+        <div class="popup-icon">
+          <i class="fas fa-check"></i>
+        </div>
+        <h3>Thank You, <span id="userName"></span>!</h3>
+        <p>We've received your message and we'll get back to you soon.</p>
+        <button class="popup-close-btn" onclick="closePopup()">OK</button>
+      </div>
+    </div>
+
+    <script>
+      const popup = document.getElementById("popupOverlay");
+      const userNameSpan = document.getElementById("userName");
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value;
+        userNameSpan.textContent = name;
+
+        popup.classList.add("active");
+
+        this.reset();
+      });
+
+      function closePopup() {
+        popup.classList.remove("active");
+      }
+
+      popup.addEventListener("click", function (e) {
+        if (e.target === popup) {
+          closePopup();
+        }
+      });
+    </script>
+    <script src="./script.js"></script>
+  </body>
 </html>
