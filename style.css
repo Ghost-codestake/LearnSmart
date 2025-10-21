@@ -17,6 +17,9 @@
 html {
   scroll-behavior: smooth;
 }
+html,body{
+  overflow-x: hidden;
+}
 header {
   background-color: #fff;
   padding: 1rem 5%;
@@ -1115,6 +1118,9 @@ nav > .cta-btn {
   }
 }
 @media (max-width: 992px) {
+  body{
+    overflow-x: hidden;
+  }
   .hero h1 {
     font-size: 3rem;
   }
@@ -1448,6 +1454,9 @@ nav > .cta-btn {
   }
 }
 @media (max-width: 480px) {
+  body{
+    overflow-x: hidden;
+  }
   header {
     padding: 1rem 3%;
   }
