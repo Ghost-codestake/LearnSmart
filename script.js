@@ -47,9 +47,11 @@ hamburger.addEventListener("click", () => {
 const dropdown = document.getElementById("dropdown");
 dropdown.addEventListener("click", (e) => {
   if (window.innerWidth <= 768) {
+         if (e.target.tagName === "A" && e.target.parentElement.id === "dropdown") {
     e.preventDefault();
     dropdown.classList.toggle("active");
   }
+}
 });
 
 // Close menu when clicking on a link (except dropdown parent)

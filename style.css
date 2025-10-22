@@ -354,17 +354,19 @@ nav > .cta-btn {
 /*COURSES WE OFFER*/
 .course-container {
   max-width: 1200px;
-  margin: 4rem auto;
+  margin: 7rem auto;
+  background: var(--btn);
+  padding: 50px;
+  border-radius: 50px;
 }
 
 .course-container h1 {
-  font-family: "Anton", sans-serif;
+  font-family: "Roboto", sans-serif;
   text-align: center;
-  font-size: 2.5rem;
-  color: var(--text2);
+  font-size: 1.5rem;
+  color: #fff;
   margin-bottom: 40px;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .tabs-container {
@@ -372,7 +374,6 @@ nav > .cta-btn {
   justify-content: center;
   gap: 0;
   margin: 60px auto;
-  background-color: var(--btn);
   border-radius: 50px;
   padding: 8px;
   max-width: 1000px;
@@ -412,10 +413,11 @@ nav > .cta-btn {
 }
 
 .tab-button {
-  padding: 16px 32px;
+  padding: 10px 16px;
+  margin: 0 10px;
   background: transparent;
   color: white;
-  border: none;
+  border: 1px solid #fff;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -479,7 +481,7 @@ nav > .cta-btn {
 
 .text-content h2 {
   font-size: 2.5rem;
-  color: #1a2b4a;
+  color: #fff;
   margin-bottom: 24px;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
@@ -487,7 +489,7 @@ nav > .cta-btn {
 
 .text-content p {
   font-size: 1.125rem;
-  color: #4a5568;
+  color: #fff;
   line-height: 1.8;
   margin-bottom: 32px;
   font-family: "Roboto", sans-serif;
@@ -495,8 +497,8 @@ nav > .cta-btn {
 
 .enroll-btn {
   padding: 16px 40px;
-  background-color: #0a1628;
-  color: white;
+  background-color: #fff;
+  color: var(--btn);
   border: none;
   border-radius: 8px;
   font-size: 1rem;
@@ -504,6 +506,7 @@ nav > .cta-btn {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .enroll-btn:hover {
@@ -1313,8 +1316,12 @@ nav > .cta-btn {
   .bottom-image {
     height: 220px;
   }
+  .course-container{
+    padding:50px 10px;
+    border-radius: 0;
+  }
   .course-container h1 {
-    font-size: 1.75rem;
+    font-size: 1.2rem;
     margin-bottom: 30px;
   }
 
@@ -1332,7 +1339,7 @@ nav > .cta-btn {
   }
 
   .tab-button {
-    padding: 12px 20px;
+    padding: 10px 15px;
     font-size: 0.9rem;
     flex-shrink: 0;
     scroll-snap-align: start;
@@ -1528,7 +1535,7 @@ nav > .cta-btn {
     border-radius: 15px;
   }
   .course-container h1 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .tabs-container {
