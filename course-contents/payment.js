@@ -3,27 +3,27 @@ const courses = {
     title: "Graphic/UI/UX Design",
     subtitle:
       "From fundamentals to brand identity hands-on projects to build your portfolio.",
-    duration: "12 weeks",
+    duration: "10 weeks",
     price: "₦350,000",
   },
   "social-media-management": {
     title: "Social Media Management",
     subtitle:   
       "Master the art of reaching and engaging audiences.",
-    duration: "16 weeks",
+    duration: "8 weeks",
     price: "₦300,000",
   },
   "web-development": {
     title: "Web Development",
     subtitle:"Master HTML, CSS, JavaScript and modern frameworks to build responsive websites.",
-    duration: "20 weeks",
+    duration: "12 weeks",
     price: "₦400,000",
   },
   "virtual-assistant": {
     title: "Virtual Assistant",
     subtitle:
       "Turn creativity into stories that inspire the world.",
-    duration: "10 weeks",
+    duration: "8 weeks",
     price: "₦300,000",
   },
   "video-editing": {

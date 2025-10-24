@@ -14,7 +14,7 @@
   --text2: #0c2949;
   --hover: #00d4ff;
 }
-html {
+html {    
   scroll-behavior: smooth;
 }
 html,body{
